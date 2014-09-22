@@ -1,0 +1,11 @@
+<% @all_bands.each do |bands| %>
+  <h2> Name: <%= "#{bands.name}" %> </h2>
+  <h2> Genre: <%= "#{bands.genre}" %> </h2>
+  <h2> Still Relevant?: <%= "#{bands.currently_relevant}" %></h2>
+  <form method="GET" action='/bands/<%= "#{bands.id}" %>'>
+    <input type="hidden" value='<%= "#{bands.id}" %>' />
+    <input type="submit" value="View This Band"/>
+  </form>
+</br>
+
+<% end %>

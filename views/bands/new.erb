@@ -1,0 +1,16 @@
+<section id="new_band">
+  <form method="POST" action="/bands">
+    Band
+    <input type="text" name="band[name]"/>
+  </br>
+    Genre
+    <input type="text" name="band[genre]"/>
+  </br>
+    Still Relevant?
+    <input type="radio" name="band[currently_relevant]" value="true">Yes
+    <input type="radio" name="band[currently_relevant]" value="false">No
+  </br>
+  </br>
+  <input type="submit" value="submit"/>
+  </form>
+</section>

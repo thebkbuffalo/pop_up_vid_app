@@ -1,0 +1,19 @@
+<h1> Name: <%= @band.name %> </h1>
+<h2> Genre: <%= @band.genre %> </h1>
+<h2> Relevant?: <%= @band.currently_relevant %></h1>
+
+
+<form method="GET" action="/bands/<%=@band.id%>/edit">
+  <input type="hidden" value="<%= @band.id %>" />
+  <input type="submit" value="edit"/>
+</form>
+
+<form method="GET" action="/bands/<%=@band.id%>/music_videos">
+  <input type="hidden" value="<%= @band.id %>" />
+  <input type="submit" value="Music Videos"/>
+</form>
+
+<form method="GET" action="/bands/<%=@band.id%>/music_videos/new">
+  <input type="hidden" value="<%= @band.id %>" />
+  <input type="submit" value="Add A New Music Video"/>
+</form>

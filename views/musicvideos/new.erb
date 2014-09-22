@@ -1,0 +1,13 @@
+<section id="new_video">
+  <form method="POST" action="/bands/:id/music_videos">
+    Song Name:
+    <input type="text" name="music_video[song_title]"/>
+  </br>
+    Video URL:
+    <input type="text" name="music_video[video_embed_url]"/>
+  </br>
+  </br>
+  <input type="hidden" name ="id" value="<%= @id %>" />
+  <input type="submit"/>
+  </form>
+</section>
