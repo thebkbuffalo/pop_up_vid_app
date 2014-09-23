@@ -55,12 +55,13 @@ class App < Sinatra::Base
   end
 
   get('/bands/:id/music_videos/new') do
+    @band = Band.find(id: params[:id])
     render(:erb, :'musicvideos/new')
   end
 
 
   get('/bands/:id/music_videos') do
-     @band = Band.find(id: params[:id])
+    @band = Band.find(id: params[:id])
     render(:erb, :'musicvideos/show')
   end
 
@@ -89,17 +90,20 @@ class App < Sinatra::Base
     new_band = params["band"]
     b = Band.new(new_band)
     b.save
-    redirect to ('/bands')
+    redirect to('/bands')
   end
 
 # TODO -- FIX THIS SHIT!!!!!
+
+
   post('/bands/:id/music_videos') do
-    new_video = Band.find(id:params[:id])
-    new_video.song_title = params["music_video"]["song_title"]
-    new_video.video_embed_url = params["music_video"]["video_embed_url"]
-    new_video.save
-    redirect to ('/bands/:id/music_videos')
+    new_video = MusicVideo.create(song_title: params["music_video"]["song_title"], video_embed_url: params["music_video"]["video_embed_url"])
+    band_id = params["band_id"]
+    band = Band.find(id:band_id.to_i)
+    redirect to('/musicvideos')
   end
+
+
 
 
 end # ends class
