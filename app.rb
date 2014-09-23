@@ -93,13 +93,11 @@ class App < Sinatra::Base
     redirect to('/bands')
   end
 
-# TODO -- FIX THIS SHIT!!!!!
-
-
+# TODO -- FIX THIS SHIT!!!!!  Like for reals...fix this shit.
   post('/bands/:id/music_videos') do
     new_video = MusicVideo.create(song_title: params["music_video"]["song_title"], video_embed_url: params["music_video"]["video_embed_url"])
     band_id = params["band_id"]
-    band = Band.find(id:band_id.to_i)
+    band = Band.find(id:band_id)
     redirect to('/musicvideos')
   end
 
