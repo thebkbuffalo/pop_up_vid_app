@@ -1,0 +1,11 @@
+<form method="POST" action="/music_videos">
+new video name:
+</br>
+<input type="text" name="video[song_title]"/>
+</br>
+new music video value:
+<input type="text" name="video[video_embed_url]"/>
+<input type="hidden" name="band_id" value="<%= @id %>"/>
+</br>
+<input type="submit" />
+</form>
