@@ -8,8 +8,7 @@ DROP TABLE IF EXISTS music_videos CASCADE;
 CREATE TABLE bands (
   id                 serial PRIMARY KEY,
   name               varchar(256) NOT NULL,
-  genre              varchar(128) NOT NULL,
-  currently_relevant boolean NOT NULL
+  genre              varchar(128) NOT NULL
 );
 
 CREATE TABLE music_videos (

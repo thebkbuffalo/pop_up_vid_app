@@ -83,7 +83,6 @@ class App < Sinatra::Base
     new_band = Band.find(id:params[:id])
     new_band.name = params["band"]["name"]
     new_band.genre = params["band"]["genre"]
-    new_band.currently_relevant = params["band"]["currently_relevant"]
     new_band.save
     redirect to('/bands')
   end

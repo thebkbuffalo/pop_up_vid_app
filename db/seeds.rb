@@ -2,9 +2,9 @@ require 'sequel'
 require_relative '../models/band'
 require_relative '../models/music_video'
 
-b1 = Band.create({name: "Tool", genre: "metal", currently_relevant: true})
-b2 = Band.create({name: "Jibbs", genre: "rap", currently_relevant: false})
-b3 = Band.create({name: "Toto", genre: "pop", currently_relevant: false})
+b1 = Band.create({name: "Tool", genre: "metal"})
+b2 = Band.create({name: "Jibbs", genre: "rap"})
+b3 = Band.create({name: "Toto", genre: "pop"})
 
 m1 = MusicVideo.create({song_title: "Sober", video_embed_url: "hglVqACd1C8"})
 m2 = MusicVideo.create({song_title: "Chain Hang Low", video_embed_url: "4SBN_ikibtg"})
