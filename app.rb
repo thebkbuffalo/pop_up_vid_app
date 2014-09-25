@@ -63,6 +63,7 @@ class App < Sinatra::Base
 
   get('/bands/:id/music_videos') do
     @band = Band.find(id: params[:id])
+    @mv = MusicVideo.find(id: params[:id])
     render(:erb, :'music_videos/show')
   end
 
@@ -100,6 +101,19 @@ class App < Sinatra::Base
     band_id = params["band_id"]
     band = Band.find(id:band_id)
     band.add_music_video(new_video)
+    redirect to('/music_videos')
+  end
+
+# TODO get these working damnit!!!
+  delete('/bands/:id') do
+    @band = Band.find(id: params[:id])
+    @band.delete
+    redirect to('/bands')
+  end
+
+  delete('/bands/:id/music_videos') do
+    @mv = MusicVideo.find(id: params[:id])
+    @mv.delete
     redirect to('/music_videos')
   end
 

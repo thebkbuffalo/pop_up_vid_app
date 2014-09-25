@@ -5,7 +5,7 @@
 
 <form method="GET" action="/bands/<%=@band.id%>/edit">
   <input type="hidden" value="<%= @band.id %>" />
-  <input type="submit" value="edit"/>
+  <input type="submit" value="Edit"/>
 </form>
 
 <form method="GET" action="/bands/<%=@band.id%>/music_videos">
@@ -16,4 +16,9 @@
 <form method="GET" action="/bands/<%=@band.id%>/music_videos/new">
   <input type="hidden" value="<%= @band.id %>" />
   <input type="submit" value="Add A New Music Video"/>
+</form>
+
+<form method="post" action="/bands/<%=@band.id%>">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input class="button" type="submit" value="Delete" id="delete">
 </form>
